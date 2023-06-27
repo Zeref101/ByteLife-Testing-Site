@@ -18,5 +18,5 @@ window.addEventListener("scroll", () => {
     navbar.style.transform = `translateY(70px)`;
   },500)
   const nl = gsap.timeline();
-  nl.to(logo2, { x: 250, duration: 0.6, delay:0.6 });
+  nl.to(logo2, { x: 250, duration: 0.6, delay:0.9 });
 });

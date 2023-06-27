@@ -2,6 +2,7 @@ const logo = document.querySelector(".loading-logo");
 const logoPage = document.querySelector(".show-logo");
 const navbar = document.querySelector(".navbar");
 const logo2 = document.querySelector(".logo");
+const container2 = document.querySelector(".dummy")
 // ? timeline
 
 const tl = gsap.timeline();
@@ -11,11 +12,11 @@ tl.to(logo, { y: -100, duration: 0.5 });
 tl.play();
 
 window.addEventListener("scroll", () => {
-  const lt = gsap.timeline();
-  lt.to(logoPage, { y: -1000, duration: 0.5 });
-  lt.play();
-  logoPage.classList.add("hide");
+  logoPage.style.transform = `translateY(-1000px)`;
   navbar.classList.remove("hide");
+  setTimeout(()=>{
+    navbar.style.transform = `translateY(70px)`;
+  },500)
   const nl = gsap.timeline();
-  nl.to(logo2, { x: 250, duration: 0.6 });
+  nl.to(logo2, { x: 250, duration: 0.6, delay:0.6 });
 });
